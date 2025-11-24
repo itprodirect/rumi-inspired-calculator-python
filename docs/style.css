@@ -1,140 +1,181 @@
 :root {
-  --bg: #050814;
-  --display-bg: #150d29;
-  --display-fg: #fef7ff;
-  --accent-pink: #ff6ad5;
-  --accent-aqua: #6af2ff;
-  --btn-bg: #241236;
-  --btn-hover: #341b4a;
-  --op-bg: #3a163b;
-  --op-fg: #ffd37a;
-  --eq-bg: #ff6ad5;
-  --eq-fg: #050814;
+  --bg-color: #121212;
+  --panel-bg: #1e1e24;
+  --text-color: #ffffff;
+  --accent-purple: #7d5fff; /* Demon Hunter Purple */
+  --accent-glow: #b388ff;
+  --accent-red: #ff3838;    /* Breathing Style Red */
+  --display-bg: #000000;
+  --btn-bg: #2d2d3a;
+  --btn-hover: #3d3d4d;
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #121533 0, #050814 45%, #02040a 100%);
-  color: #fef7ff;
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
-  align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .app {
-  width: min(380px, 100vw - 32px);
-  background: rgba(5, 8, 20, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
-  padding: 16px 16px 12px;
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--panel-bg);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  box-shadow: 0 0 25px rgba(125, 95, 255, 0.2);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.app-header {
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-purple);
+  background: linear-gradient(180deg, rgba(125,95,255,0.1) 0%, rgba(0,0,0,0) 100%);
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--accent-aqua);
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--accent-glow);
+  text-shadow: 0 0 10px var(--accent-purple);
 }
 
+.subtitle {
+  margin: 5px 0 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  color: var(--accent-red);
+}
+
+/* MAIN LAYOUT */
 .calc {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+  flex: 1;
 }
 
+/* DISPLAY SCREEN */
 .display {
-  background: var(--display-bg);
-  color: var(--display-fg);
-  border-radius: 8px;
-  padding: 14px 12px;
-  font-size: 2rem;
-  font-family: "Consolas", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  background-color: var(--display-bg);
+  color: #00ff88; /* Matrix/Sci-fi Green */
+  font-size: 2.5rem;
   text-align: right;
-  min-height: 3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  min-height: 80px;
+  overflow-x: auto;
+  font-family: 'Roboto Mono', monospace;
+  box-shadow: inset 0 0 10px rgba(0,255,136,0.1);
 }
 
+/* VISUALIZER SECTION */
+.visualizer-section {
+  background-color: #2b2b36;
+  border-radius: 12px;
+  padding: 15px;
+  border-left: 4px solid var(--accent-purple);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.visualizer-header {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.visualizer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#fraction-canvas {
+  background: #222;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.fraction-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-glow);
+  flex: 1;
+  text-align: right;
+}
+
+
+
+/* CALCULATOR GRID */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 52px;
-  gap: 8px;
+  gap: 12px;
+  margin-top: auto;
 }
 
 .btn {
+  height: 60px;
+  font-size: 1.4rem;
   border: none;
-  border-radius: 8px;
-  background: var(--btn-bg);
-  color: var(--display-fg);
-  font-size: 1.1rem;
-  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.05s ease, box-shadow 0.05s ease, background 0.1s ease;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  transition: filter 0.2s;
 }
 
-.btn:hover,
-.btn:focus-visible {
-  background: var(--btn-hover);
-  outline: none;
+.btn-num {
+  background-color: var(--btn-bg);
+  color: white;
 }
-
-.btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) inset;
+.btn-num:active {
+  background-color: var(--btn-hover);
 }
 
 .btn-op {
-  background: var(--op-bg);
-  color: var(--op-fg);
+  background-color: #15151a;
+  color: var(--accent-glow);
+  border: 1px solid #333;
 }
 
 .btn-clear {
-  color: var(--accent-aqua);
+  background-color: var(--accent-red);
+  color: white;
+  font-weight: 900;
 }
 
 .btn-eq {
-  background: var(--eq-bg);
-  color: var(--eq-fg);
-  font-weight: 700;
-}
-
-.btn-spacer {
-  pointer-events: none;
+  background-color: var(--accent-purple);
+  color: white;
+  box-shadow: 0 0 10px var(--accent-purple);
 }
 
 .span-2 {
   grid-column: span 2;
 }
 
-.app-footer {
-  margin-top: 4px;
-}
-
-.app-footer p {
-  margin: 0;
-  font-size: 0.7rem;
-  opacity: 0.75;
-  text-align: center;
-}
-
-/* Small screens */
-@media (max-width: 400px) {
-  .buttons {
-    grid-auto-rows: 48px;
-  }
+/* Mobile Tweaks */
+@media (max-height: 650px) {
+  .btn { height: 50px; font-size: 1.2rem; }
+  .display { padding: 10px; font-size: 2rem; }
 }
