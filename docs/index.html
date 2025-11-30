@@ -5,69 +5,107 @@
   <title>Rumi // Demon Hunter Calc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="style.css" />
-  <!-- A cool "Gamer/Anime" font -->
+  <!-- Gamer/Anime fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="app">
+
+    <!-- HEADER -->
     <header class="app-header">
       <h1>DEMON HUNTER MATH</h1>
       <p class="subtitle">Total Concentration: Fraction Form</p>
     </header>
 
-    <main class="calc">
-      <!-- Calculator Screen -->
-      <div id="display" class="display">0</div>
+    <!-- MAIN 3-COLUMN LAYOUT -->
+    <div class="main-layout">
 
-      <!-- Rumi's Visualizer Section -->
-      <section class="visualizer-section">
-        <div class="visualizer-header">Visualizer</div>
-        
-        <div class="visualizer-content">
-          <!-- The Canvas draws the pie chart -->
-          <canvas id="fraction-canvas" width="100" height="100"></canvas>
-          
-          <!-- Text description of the fraction -->
-          <div id="fraction-text" class="fraction-text">0</div>
+      <!-- LEFT PLAYLIST -->
+      <section class="spotify-section left">
+        <h2 class="spotify-title">Rumi's Focus Playlist</h2>
+        <p class="spotify-subtitle">Tracks to hunt demons, crush math, and stay in flow.</p>
+
+        <div class="spotify-embeds">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5sBDrrtLGbV64QJnEqfjer?utm_source=generator"
+            width="100%" height="180" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/1rKQjUhF9zFJmuUotr3VkV?utm_source=generator"
+            width="100%" height="180" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
         </div>
-
-        
-        
       </section>
 
-      <!-- Standard Calculator Buttons -->
-      <div class="buttons">
-        <!-- Row 1 -->
-        <button class="btn btn-op btn-clear" data-action="clear">CLR</button>
-        <button class="btn btn-op" data-value="(">(</button>
-        <button class="btn btn-op" data-value=")">)</button>
-        <button class="btn btn-op" data-value="/">÷</button>
+      <!-- CENTER CALCULATOR (UNCHANGED) -->
+      <main class="calc">
+        <div id="display" class="display">0</div>
 
-        <!-- Row 2 -->
-        <button class="btn btn-num" data-value="7">7</button>
-        <button class="btn btn-num" data-value="8">8</button>
-        <button class="btn btn-num" data-value="9">9</button>
-        <button class="btn btn-op" data-value="*">×</button>
+        <!-- VISUALIZER -->
+        <section class="visualizer-section">
+          <div class="visualizer-header">Visualizer</div>
+          <div class="visualizer-content">
+            <canvas id="fraction-canvas" width="100" height="100"></canvas>
+            <div id="fraction-text" class="fraction-text">0</div>
+          </div>
+        </section>
 
-        <!-- Row 3 -->
-        <button class="btn btn-num" data-value="4">4</button>
-        <button class="btn btn-num" data-value="5">5</button>
-        <button class="btn btn-num" data-value="6">6</button>
-        <button class="btn btn-op" data-value="-">-</button>
+        <!-- BUTTON GRID -->
+        <div class="buttons">
+          <button class="btn btn-op btn-clear" data-action="clear">CLR</button>
+          <button class="btn btn-op" data-value="(">(</button>
+          <button class="btn btn-op" data-value=")">)</button>
+          <button class="btn btn-op" data-value="/">÷</button>
 
-        <!-- Row 4 -->
-        <button class="btn btn-num" data-value="1">1</button>
-        <button class="btn btn-num" data-value="2">2</button>
-        <button class="btn btn-num" data-value="3">3</button>
-        <button class="btn btn-op" data-value="+">+</button>
+          <button class="btn btn-num" data-value="7">7</button>
+          <button class="btn btn-num" data-value="8">8</button>
+          <button class="btn btn-num" data-value="9">9</button>
+          <button class="btn btn-op" data-value="*">×</button>
 
-        <!-- Row 5 -->
-        <button class="btn btn-num span-2" data-value="0">0</button>
-        <button class="btn btn-num" data-value=".">.</button>
-        <button class="btn btn-eq" data-action="equals">=</button>
-      </div>
-    </main>
-  </div>
+          <button class="btn btn-num" data-value="4">4</button>
+          <button class="btn btn-num" data-value="5">5</button>
+          <button class="btn btn-num" data-value="6">6</button>
+          <button class="btn btn-op" data-value="-">-</button>
+
+          <button class="btn btn-num" data-value="1">1</button>
+          <button class="btn btn-num" data-value="2">2</button>
+          <button class="btn btn-num" data-value="3">3</button>
+          <button class="btn btn-op" data-value="+">+</button>
+
+          <button class="btn btn-num span-2" data-value="0">0</button>
+          <button class="btn btn-num" data-value=".">.</button>
+          <button class="btn btn-eq" data-action="equals">=</button>
+        </div>
+      </main>
+
+      <!-- RIGHT PLAYLIST -->
+      <section class="spotify-section right">
+        <div class="spotify-embeds">
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/3RXUgPNIbUgFxsDWuBQEt6?utm_source=generator"
+            width="100%" height="180" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/1CPZ5BxNNd0n0nF4Orb9JS?utm_source=generator"
+            width="100%" height="180" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+    </div> <!-- END main-layout -->
+
+  </div> <!-- END app -->
 
   <script src="script.js"></script>
 </body>
